@@ -2,3 +2,5 @@ fastapi
 requests
 python-dotenv
 uvicorn
+httpx
+twilio
