@@ -1,7 +1,5 @@
 from fastapi import APIRouter, Request
 from fastapi.templating import Jinja2Templates
-from ..config import settings
-import httpx
 from .helper import get_odds_data
 
 router = APIRouter()
