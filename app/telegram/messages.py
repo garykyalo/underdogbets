@@ -19,3 +19,4 @@ Best bet: {home_team} win odds {home_win_odds} at {betfair}, or {away_team} win 
 Stake: £10.
 """
     return message_response
+

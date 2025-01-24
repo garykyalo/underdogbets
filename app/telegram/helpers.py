@@ -1,18 +1,20 @@
 import requests, json, random
 from ..config import settings  
 from ..signalgeneration.helper import get_odds_data
+from ..signalgeneration.helpers2 import get_In_Season
 from .messages import generate_message
 
 async def send_message(data):
-    url = f"https://api.telegram.org/bot{settings.TELEGRAM_TOKEN}/sendMessage"
+    telegram_url = f"https://api.telegram.org/bot{settings.TELEGRAM_TOKEN}/sendMessage"
     if 'message' in data:
         chat_id = data['message']['chat']['id']
-        send_first_message(chat_id, url)
+        send_first_message(chat_id, telegram_url)
     elif 'callback_query' in data:
         chat_id = data['callback_query']['message']['chat']['id']
-        sport = data['callback_query']['data']
-        matches = await get_odds_data(sport)
-        betting_tips_message(url, chat_id, matches, sport)
+        result = await get_In_Season(chat_id,telegram_url)
+        #sport = data['callback_query']['data']
+        #matches = await get_odds_data(sport)
+        #betting_tips_message(url, chat_id, matches, sport)
         
 
 
@@ -20,11 +22,7 @@ def send_first_message(chat_id, url):
     keyboard = {
         "inline_keyboard": [
             [
-                {"text": "soccer", "callback_data": "soccer"},
-                {"text": "tennis", "callback_data": "tennis"}
-            ],
-            [
-                {"text": "basketball", "callback_data": "basketball"}
+                {"text": "Get odds", "callback_data": "basketball"}
             ]
         ]
     }
