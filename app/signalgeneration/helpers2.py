@@ -59,7 +59,9 @@ async def get_odds_data(selected_leagues,chat_id,telegram_url):
 def send_telegram_message(chat_id, text, telegram_url):
     params = {
         "chat_id": chat_id,
-        "text": text}
+        "text": text,
+        "parse_mode": "HTML"
+        }
     response = requests.get(telegram_url, params=params)
     return response.status_code
 
@@ -73,12 +75,12 @@ def format_tip(match):
     home_team, away_team = match['home_team'], match['away_team']
     odds = match['odds']
     return f"""
- **Match**:{home_team} vs {away_team} 
- **Starts at**: {match['time']}
- **Tip**: head to head(h2h)
-  **Best Odds**:
-    {home_team} win odds: {odds[f'{home_team} win'][1]} @ {odds[f'{home_team} win'][0]}
-    {away_team} win odds: {odds[f'{away_team} win'][1]} @ {odds[f'{away_team} win'][0]}
-    or a draw odds: {odds['draw'][1]} @ {odds['draw'][0]}
- **Confidence**: {confidence:.2f}%
- """ 
+⚽ <b>Match:</b> {home_team} vs {away_team}<br>
+⏰ <b>Starts at:</b> {match['time']}<br>
+<b>Tip:</b> Head to head (H2H)<br>
+<b>Best Odds:</b><br> 🔥
+🔹&nbsp;&nbsp;{home_team} win odds: {odds[f'{home_team} win'][1]} @ {odds[f'{home_team} win'][0]}<br>
+🔹&nbsp;&nbsp;{away_team} win odds: {odds[f'{away_team} win'][1]} @ {odds[f'{away_team} win'][0]}<br>
+🔹&nbsp;&nbsp;Or a draw odds: {odds['draw'][1]} @ {odds['draw'][0]}<br>
+<b>Confidence:</b> {confidence:.2f}%<br>
+""" 
