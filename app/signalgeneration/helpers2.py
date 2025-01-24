@@ -103,6 +103,7 @@ def format_tip(match):
 Sport: Football ⚽️ 
 League: {league}
 Match: <b> {home_team} vs {away_team} </b>
+March Starts at: {time}
 Bet: {home_team}  to win at odds {odds[f'{home_team} win'][1]}.
 Stake: £10.
 
