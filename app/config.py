@@ -15,6 +15,8 @@ class Settings:
     SPORTSRADAR_API_KEY: str = os.getenv("SPORTSRADAR_API_KEY")
     ## Telegram
     TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN")
+    BASIC_URL: str = os.getenv("Basicurl")
+
 
   
 settings = Settings()

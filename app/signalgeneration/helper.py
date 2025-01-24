@@ -3,13 +3,11 @@ import httpx
 
 async def get_best_odds(json_data):
     best_odds = {}
-
-    for match in json_data:
-       
+    for match in json_data:  
         match_id = match['id']
         home_team, away_team = match['home_team'], match['away_team']
         best_odds[match_id] = {
-            'home_team':match['home_team'],
+            'home_team': match['home_team'],
             'away_team':match['away_team'],
             'league':match["sport_title"], 
             'time': match['commence_time'],
