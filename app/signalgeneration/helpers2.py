@@ -67,7 +67,7 @@ def send_telegram_message(chat_id, text, telegram_url):
 
 import random 
 
-def format_tip(match):  
+"""def format_tip(match):  
     confidence = random.uniform(80, 100)
     home_team, away_team = match['home_team'], match['away_team']
     league = match['league']
@@ -75,7 +75,8 @@ def format_tip(match):
     time_str = match['time']
     dt = datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%SZ")
     time = dt.strftime("%H:%M (UTC)")
-    return f"""
+    return""" 
+"""
 ❗️<b> Daily Tips from <b> <i> Underdog </i> </b> </b>❗️
 
 ⚽️ Football-{league} ⚽️
@@ -87,4 +88,24 @@ def format_tip(match):
 🔸<b>{away_team} win odds: </b> {odds[f'{away_team} win'][1]} @ {odds[f'{away_team} win'][0]}
 🔸<b>Draw odds: </b> {odds['draw'][1]} @ {odds['draw'][0]}
 <b>Confidence:</b>  {confidence:.2f}%
-""" 
+"""
+
+def format_tip(match):
+    confidence = random.uniform(80, 100)
+    home_team, away_team = match['home_team'], match['away_team']
+    league = match['league']
+    odds = match['odds']
+    time_str = match['time']
+    dt = datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%SZ")
+    time = dt.strftime("%H:%M (UTC)")
+    return f"""
+🟢 <b> Today’s Tips:</b>
+Sport: Football ⚽️ 
+League: {league}
+Match: <b> {home_team} vs {away_team} </b>
+Bet: {home_team}  to win at odds {odds[f'{home_team} win'][1]}.
+Stake: £10.
+
+Platform: {odds[f'{home_team} win'][0]} → Go to Football > {league} > Match Result → Select {home_team}.
+<i> Good luck!</i>
+"""
