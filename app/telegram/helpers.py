@@ -4,6 +4,7 @@ from ..signalgeneration.helper import get_odds_data
 from ..signalgeneration.helpers2 import get_In_Season
 from .messages import generate_message
 
+
 async def send_message(data):
     telegram_url = f"https://api.telegram.org/bot{settings.TELEGRAM_TOKEN}/sendMessage"
     if 'message' in data:

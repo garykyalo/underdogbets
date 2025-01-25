@@ -52,7 +52,7 @@ async def get_odds_data(selected_leagues,chat_id,telegram_url):
                     counter += 1
                     print(counter)
         counter2 += 1
-        print(counter2,"counter 2")
+        print(counter2,"counter 2", chat_id)
 
                     
 def send_telegram_message(chat_id, text, telegram_url):
