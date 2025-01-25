@@ -17,6 +17,5 @@ class Settings:
     TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN")
     BASIC_URL: str = os.getenv("Basicurl")
 
-
   
 settings = Settings()
