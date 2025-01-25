@@ -26,7 +26,7 @@ scheduler = BackgroundScheduler()
 # Add the job to the scheduler
 scheduler.add_job(
     sync_send_daily_tip,
-    IntervalTrigger(seconds=100),
+    IntervalTrigger(seconds = 20),
     id="daily_tip_job",
     name="Send Daily Tip",
     replace_existing=True
@@ -35,11 +35,11 @@ scheduler.add_job(
 # Schedule "Weekly Stats" message
 def sync_send_weeklystat():
     text = weekly_stat()
-    asyncio.run(send_image(text)) 
+    asyncio.run(send_message(text)) 
 
 scheduler.add_job(
     sync_send_weeklystat,
-    IntervalTrigger(seconds = 10),  # Runs weekly
+    IntervalTrigger(minutes = 30),  # Runs weekly
     id="weekly_stats_job",
     name="Send Weekly Stats",
     replace_existing=True

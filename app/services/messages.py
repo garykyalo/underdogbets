@@ -28,9 +28,11 @@ Platform: {odds[f'{home_team} win'][0]} → Go to Football > {league} > Match Re
 def weekly_stat():
     return f"""
 <b>📊 Weekly Stats:</b>
-Total Tips: 15
-Wins: 12 ✅
-Losses: 3 ❌
-Profit: +24%.
-<i>“Keep winning with TheUnderdogTips”</i>
+
+    Total Tips: 15
+    Wins: 12 ✅
+    Losses: 3 ❌
+    Profit: +24%.
+
+<i>“ Keep winning with TheUnderdogTips ”</i>
 """
