@@ -26,7 +26,7 @@ scheduler = BackgroundScheduler()
 # Add the job to the scheduler
 scheduler.add_job(
     sync_send_daily_tip,
-    IntervalTrigger(seconds = 20),
+    IntervalTrigger(minutes = 20),
     id="daily_tip_job",
     name="Send Daily Tip",
     replace_existing=True
