@@ -12,10 +12,10 @@ class Settings:
     
     ##SIgnalgeneration
     ODDS_API_KEY: str = os.getenv("ODDS_API_KEY", "").strip('"')
-    SPORTSRADAR_API_KEY: str = os.getenv("SPORTSRADAR_API_KEY")
+    SPORTSRADAR_API_KEY: str = os.getenv("SPORTSRADAR_API_KEY").strip('"')
     ## Telegram
-    TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN")
-    BASIC_URL: str = os.getenv("Basicurl")
+    TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN").strip('"')
+    BASIC_URL: str = os.getenv("Basicurl").strip('"')
 
   
 settings = Settings()

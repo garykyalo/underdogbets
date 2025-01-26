@@ -19,16 +19,12 @@ async def get_In_Season():
       }
     async with httpx.AsyncClient() as client:
         response = await client.get(base_url, params=params)
-        print("hii response", response, settings.ODDS_API_KEY)
         ## pick our specified list of leagues to check from
         with open('app/services/leagues.json', 'r') as file:
             target_leagues = json.load(file)
         df_target = pd.DataFrame(target_leagues)
-        print("target DataFrame:", df_target.head())
         df_fetched = pd.DataFrame(response.json())
-        print("Fetched DataFrame:", df_fetched.head())
         df_matched = pd.merge(df_fetched, df_target, on=['group','title'], how='inner')
-        print("matched DataFrame:", df_matched.head())
         selected_leagues = json.loads(df_matched.to_json(orient='records'))
         bestodds = await get_odds_data(selected_leagues)
         return bestodds

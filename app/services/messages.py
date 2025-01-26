@@ -4,7 +4,6 @@ import random
 
 def Daily_tip(match):
     confidence = random.uniform(80, 100)
-    print(confidence)
     home_team, away_team = match['home_team'], match['away_team']
     league = match['league']
     odds = match['odds']
@@ -13,6 +12,7 @@ def Daily_tip(match):
     date = dt.strftime("%Y-%m-%d")
     time = dt.strftime("%H:%M (UTC)")
     return f"""
+
 🟢 <b> Today’s Tips:</b>
 Sport: Football ⚽️ 
 League: {league}
@@ -29,8 +29,8 @@ Platform: {odds[f'{home_team} win'][0]} → Go to Football > {league} > Match Re
 """
 
 def weekly_stat():
-    print("weekly stat called")
     return f"""
+
 <b>📊 Weekly Stats:</b>
 
     Total Tips: 15

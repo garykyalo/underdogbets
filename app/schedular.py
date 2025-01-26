@@ -16,7 +16,6 @@ def sync_send_daily_tip():
 async def send_daily_tip():
     match = await select_match()  # Wait for the match asynchronously
     text =  Daily_tip(match)
-    print(text, "here")
     return text
 
 
@@ -39,7 +38,7 @@ def sync_send_weeklystat():
 
 scheduler.add_job(
     sync_send_weeklystat,
-    IntervalTrigger(seconds=1800),  # Runs weekly
+    IntervalTrigger(seconds=1500),  # Runs weekly
     id="weekly_stats_job",
     name="Send Weekly Stats",
     replace_existing=True
