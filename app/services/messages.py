@@ -9,12 +9,14 @@ def Daily_tip(match):
     odds = match['odds']
     time_str = match['time']
     dt = datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%SZ")
+    date = dt.strftime("%Y-%m-%d")
     time = dt.strftime("%H:%M (UTC)")
     return f"""
 🟢 <b> Today’s Tips:</b>
 Sport: Football ⚽️ 
 League: {league}
 Match: <b> {home_team} vs {away_team} </b>
+Date: {date}
 March Starts at: {time}
 💥 Bet:
 🎯 {home_team}  to win at odds <b> {odds[f'{home_team} win'][1]} 🎯</b>.
