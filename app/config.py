@@ -11,7 +11,7 @@ class Settings:
     AUTH_TOKEN: str = os.getenv("AUTH_TOKEN")
     
     ##SIgnalgeneration
-    ODDS_API_KEY: str = os.getenv("ODDS_API_KEY")
+    ODDS_API_KEY: str = os.getenv("ODDS_API_KEY", "").strip('"')
     SPORTSRADAR_API_KEY: str = os.getenv("SPORTSRADAR_API_KEY")
     ## Telegram
     TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN")
