@@ -3,6 +3,7 @@ from fastapi.responses import FileResponse
 from .config import settings
 import requests, os
 from .services.oddsapi import get_In_Season
+from .services.footballl import fetch_data
 
 
 router = APIRouter()
@@ -14,7 +15,9 @@ def home():
 
 @router.get("/leagues")
 async def Leagues():
-    result = await get_In_Season()
+    #result = await get_In_Season()
+    result = fetch_data()
+    print(result, "Hapa")
     return result
 
 @router.get("/image")

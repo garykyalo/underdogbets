@@ -40,3 +40,7 @@ def weekly_stat():
 
 <i>“ Keep winning with TheUnderdogTips ”</i>
 """
+
+
+
+
