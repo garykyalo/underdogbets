@@ -3,8 +3,8 @@ requests
 python-dotenv
 uvicorn
 httpx
-twilio
 Jinja2
 pandas
 apscheduler
-asyncio
+sqlalchemy
+google.generativeai

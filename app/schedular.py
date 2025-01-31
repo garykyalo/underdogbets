@@ -2,10 +2,10 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import asyncio
-from .services.telegram import send_message, send_image
+from .services.telegram import send_message
 from .services.messages import Daily_tip, weekly_stat
-from .services.oddsapi import select_match
-
+from .services.football import Get_todays_odds
+from .database import get_db
 
 
 # Wrap the async call to ensure an event loop is created in the thread
@@ -14,18 +14,17 @@ def sync_send_daily_tip():
     asyncio.run(send_message(text)) 
 
 async def send_daily_tip():
-    match = await select_match()  # Wait for the match asynchronously
-    text =  Daily_tip(match)
+    db = next(get_db())
+    match = await Get_todays_odds(db)
+    text = Daily_tip(match)
     return text
-
-
 scheduler = BackgroundScheduler()
 
 
 # Add the job to the scheduler
 scheduler.add_job(
     sync_send_daily_tip,
-    IntervalTrigger(seconds=600),
+    IntervalTrigger(seconds=900),
     id="daily_tip_job",
     name="Send Daily Tip",
     replace_existing=True

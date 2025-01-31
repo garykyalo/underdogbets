@@ -1,0 +1,342 @@
+[
+  {
+    "country": "England",
+    "league_status": "On season",
+    "league_name": "League One",
+    "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+    "id": 1,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/41.png",
+    "league_id": 41
+  },
+  {
+    "country": "England",
+    "league_status": "On season",
+    "league_name": "League Two",
+    "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+    "id": 2,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/42.png",
+    "league_id": 42
+  },
+  {
+    "country": "England",
+    "league_status": "On season",
+    "league_name": "National League",
+    "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+    "id": 3,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/43.png",
+    "league_id": 43
+  },
+  {
+    "country": "Netherlands",
+    "league_status": "On season",
+    "league_name": "Eerste Divisie",
+    "flag": "https://media.api-sports.io/flags/nl.svg",
+    "id": 4,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/89.png",
+    "league_id": 89
+  },
+  {
+    "country": "Germany",
+    "league_status": "On season",
+    "league_name": "2. Bundesliga",
+    "flag": "https://media.api-sports.io/flags/de.svg",
+    "id": 5,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/79.png",
+    "league_id": 79
+  },
+  {
+    "country": "Germany",
+    "league_status": "On season",
+    "league_name": "3. Liga",
+    "flag": "https://media.api-sports.io/flags/de.svg",
+    "id": 6,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/80.png",
+    "league_id": 80
+  },
+  {
+    "country": "Germany",
+    "league_status": null,
+    "league_name": "Regionalliga",
+    "flag": null,
+    "id": 7,
+    "sport": "Soccer",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Spain",
+    "league_status": null,
+    "league_name": "La Liga 2 - Spain",
+    "flag": null,
+    "id": 8,
+    "sport": "Soccer",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Spain",
+    "league_status": null,
+    "league_name": "Tercera División",
+    "flag": null,
+    "id": 9,
+    "sport": "Soccer",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "France",
+    "league_status": "On season",
+    "league_name": "National 1",
+    "flag": "https://media.api-sports.io/flags/fr.svg",
+    "id": 10,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/63.png",
+    "league_id": 63
+  },
+  {
+    "country": "France",
+    "league_status": "On season",
+    "league_name": "Ligue 2",
+    "flag": "https://media.api-sports.io/flags/fr.svg",
+    "id": 11,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/62.png",
+    "league_id": 62
+  },
+  {
+    "country": "Italy",
+    "league_status": "On season",
+    "league_name": "Serie B",
+    "flag": "https://media.api-sports.io/flags/it.svg",
+    "id": 12,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/136.png",
+    "league_id": 136
+  },
+  {
+    "country": "Italy",
+    "league_status": "On season",
+    "league_name": "Coppa Italia Serie C",
+    "flag": "https://media.api-sports.io/flags/it.svg",
+    "id": 13,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/891.png",
+    "league_id": 891
+  },
+  {
+    "country": "Scotland",
+    "league_status": "On season",
+    "league_name": "Championship",
+    "flag": "https://media.api-sports.io/flags/gb-sct.svg",
+    "id": 14,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/180.png",
+    "league_id": 180
+  },
+  {
+    "country": "Scotland",
+    "league_status": "On season",
+    "league_name": "League One",
+    "flag": "https://media.api-sports.io/flags/gb-sct.svg",
+    "id": 15,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/183.png",
+    "league_id": 183
+  },
+  {
+    "country": "Scotland",
+    "league_status": "On season",
+    "league_name": "League Two",
+    "flag": "https://media.api-sports.io/flags/gb-sct.svg",
+    "id": 16,
+    "sport": "Soccer",
+    "logo": "https://media.api-sports.io/football/leagues/184.png",
+    "league_id": 184
+  },
+  {
+    "country": "Global",
+    "league_status": null,
+    "league_name": "ATP Challenger Tour",
+    "flag": null,
+    "id": 17,
+    "sport": "Tennis",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Global",
+    "league_status": null,
+    "league_name": "ITF Men’s Circuit",
+    "flag": null,
+    "id": 18,
+    "sport": "Tennis",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Global",
+    "league_status": null,
+    "league_name": "ITF Women’s Circuit",
+    "flag": null,
+    "id": 19,
+    "sport": "Tennis",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Global",
+    "league_status": null,
+    "league_name": "WTA 125 Tournaments",
+    "flag": null,
+    "id": 20,
+    "sport": "Tennis",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Poland",
+    "league_status": "Offseason",
+    "league_name": "Polish Cup",
+    "flag": "https://media.api-sports.io/flags/pl.svg",
+    "id": 21,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/154.png",
+    "league_id": 154
+  },
+  {
+    "country": "Germany",
+    "league_status": null,
+    "league_name": "Regionalliga",
+    "flag": null,
+    "id": 22,
+    "sport": "Basketball",
+    "logo": null,
+    "league_id": null
+  },
+  {
+    "country": "Germany",
+    "league_status": "Offseason",
+    "league_name": "Pro A",
+    "flag": "https://media.api-sports.io/flags/de.svg",
+    "id": 23,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/42.png",
+    "league_id": 42
+  },
+  {
+    "country": "Spain",
+    "league_status": "On season",
+    "league_name": "LEB - Oro",
+    "flag": "https://media.api-sports.io/flags/es.svg",
+    "id": 24,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/95.png",
+    "league_id": 95
+  },
+  {
+    "country": "France",
+    "league_status": "Offseason",
+    "league_name": "Pro B",
+    "flag": "https://media.api-sports.io/flags/fr.svg",
+    "id": 25,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/8.png",
+    "league_id": 8
+  },
+  {
+    "country": "Italy",
+    "league_status": "Offseason",
+    "league_name": "Serie A1 W",
+    "flag": "https://media.api-sports.io/flags/it.svg",
+    "id": 26,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/53.png",
+    "league_id": 53
+  },
+  {
+    "country": "United Kingdom",
+    "league_status": "Offseason",
+    "league_name": "BBL",
+    "flag": "https://media.api-sports.io/flags/gb.svg",
+    "id": 27,
+    "sport": "Basketball",
+    "logo": "https://media.api-sports.io/basketball/leagues/108.png",
+    "league_id": 108
+  },
+  {
+    "country": "England",
+    "league_status": "On season",
+    "league_name": "WSL Cup",
+    "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+    "id": 28,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/697.png",
+    "league_id": 697
+  },
+  {
+    "country": "England",
+    "league_status": "On season",
+    "league_name": "Championship",
+    "flag": "https://media.api-sports.io/flags/gb-eng.svg",
+    "id": 29,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/40.png",
+    "league_id": 40
+  },
+  {
+    "country": "Netherlands",
+    "league_status": "On season",
+    "league_name": "Eredivisie Women",
+    "flag": "https://media.api-sports.io/flags/nl.svg",
+    "id": 30,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/91.png",
+    "league_id": 91
+  },
+  {
+    "country": "Germany",
+    "league_status": "On season",
+    "league_name": "Frauen Bundesliga",
+    "flag": "https://media.api-sports.io/flags/de.svg",
+    "id": 31,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/82.png",
+    "league_id": 82
+  },
+  {
+    "country": "France",
+    "league_status": "On season",
+    "league_name": "Feminine Division 1",
+    "flag": "https://media.api-sports.io/flags/fr.svg",
+    "id": 32,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/64.png",
+    "league_id": 64
+  },
+  {
+    "country": "Spain",
+    "league_status": "On season",
+    "league_name": "Primera División Femenina",
+    "flag": "https://media.api-sports.io/flags/es.svg",
+    "id": 33,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/142.png",
+    "league_id": 142
+  },
+  {
+    "country": "Italy",
+    "league_status": "On season",
+    "league_name": "Serie A Women",
+    "flag": "https://media.api-sports.io/flags/it.svg",
+    "id": 34,
+    "sport": "Women’s Football",
+    "logo": "https://media.api-sports.io/football/leagues/139.png",
+    "league_id": 139
+  }
+]

@@ -7,11 +7,8 @@ import os
 
 async def send_message(text):
     chat_id = -1002226489488
-   
     telegram_url = f"https://api.telegram.org/bot{settings.TELEGRAM_TOKEN}/sendMessage"
-  
-    params = {
-        "chat_id": chat_id,
+    params = {        "chat_id": chat_id,
         "text": text,
         "parse_mode": "HTML"
         }

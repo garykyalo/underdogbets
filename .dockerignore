@@ -5,7 +5,6 @@ __pycache__/
 
 # Ignore virtual environments
 .venv/
-.env
 
 # Ignore Git files
 .git/
