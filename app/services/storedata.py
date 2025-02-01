@@ -1,39 +1,36 @@
 ## contains models  to store data into the database.
-from .staticfetch import get_teams, fetch_data
 from sqlalchemy.orm import Session
-from ..database import Teams, Leagues, Fixtures, Prediction, Odds
-from datetime import datetime, timedelta
+from ..database import Teams, Fixtures, Prediction, Odds
+from datetime import datetime
 
-async def store_teamsdata(db: Session):
-    league_ids = [league_id[0] for league_id in db.query(Leagues.league_id).all() if league_id[0] is not None]
-    for league_id in league_ids:
-        data = await get_teams(league_id)
-        count = 1
-        for item in data["response"]:
-            team_data = item["team"]
+async def store_teamsdata(db: Session, data):
+    count = 1
+    for item in data["response"]:
+        team_data = item["team"]
             # Check if team already exists to avoid duplication
-            existing_team = db.query(Teams).filter(Teams.id == team_data["id"]).first()
-            if not existing_team:
-                team = Teams(id=team_data["id"],
+        existing_team = db.query(Teams).filter(Teams.id == team_data["id"]).first()
+        if not existing_team:
+            team = Teams(id=team_data["id"],
                 team_name=team_data["name"],
                 country=team_data["country"],
-                code=team_data.get("code"),
-                logo=team_data["logo"],)
-                db.add(team)
-                count +=1
-                print(count)
+            code=team_data.get("code"),
+            logo=team_data["logo"],)
+            db.add(team)
+            count +=1
+            print(count)
     db.commit()
     return " teams succesfully added"
 
 
 async def store_fixtures(db:Session, fixtures):
+    x=1
     for item in fixtures:
         fixture_data = item["fixture"]
         league_data = item["league"]
         teams_data = item["teams"]
-        date_str= datetime.strptime(fixture_data["date"], "%Y-%m-%d %H:%M:%S")
-        date = date_str.strftime("%Y-%m-%d")
-        time = date_str.strftime("%H:%M:%S")
+        date_str = datetime.strptime(fixture_data["date"], "%Y-%m-%dT%H:%M:%S%z")
+        date = date_str.date()  # Outputs 'YYYY-MM-DD'
+        time = date_str.time()
         existing_fixture = db.query(Fixtures).filter(Fixtures.fixture_id == fixture_data["id"]).first()
         if not existing_fixture:
             fixture = Fixtures(
@@ -45,6 +42,8 @@ async def store_fixtures(db:Session, fixtures):
                     away_team=teams_data["away"]["id"]
                 )
             db.add(fixture)
+            x += 1
+            print(x)
     db.commit()
     return "success"
 
@@ -64,6 +63,7 @@ async def store_predictions(db: Session, predictions):
 
 async def store_odds(db: Session, odds):               
     for odds_data in odds:
+        print(2)
         fixture_id = odds_data["fixture"]["id"]
         update_time = odds_data["update"]
         bookmakers = str(odds_data["bookmakers"])

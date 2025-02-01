@@ -18,6 +18,6 @@ class Settings:
     TELEGRAM_TOKEN: str = os.getenv("TELEGRAM_TOKEN").strip('"')
     BASIC_URL: str = os.getenv("Basicurl").strip('"')
     ## Gemini
-    GEMINI_KEY: str = os.getenv("GEMINI_KEY").strip('"')
+    OPENAI_KEY: str = os.getenv("OPENAI_KEY").strip('"')
 
 settings = Settings()

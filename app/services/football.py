@@ -134,3 +134,57 @@ STEPS
 2. get a list of all available betting options
 3. build models to connect predicted bet option to available options and best bookmaker and best odds
 """
+
+"""
+STEP 3:: BUILD PREDICTION LOGIC
+
+>> understand how gpt works, build a small app that picks  input and returns output.
+>> instruct the model to pick output from my database()
+    ++ give it inputs( todays fixtures)
+    +++ produce output predictions,and best bookmaker together with its odds
+    +++ use that output to combile a message
+>> ensure the bot can send both  plain text and images.
+
+"""
+
+"""
+model process 
+get a fixture, fixtureid,
+++ use that fixtureid to get predictions, 
+++ send the prediction to chatpt to split it into data that odds can understand
+++ use that data to retrieve the best odds, best bookmaker
+
+>> write a prompt with prediction and odds >> loop over for each fixture
+>> return highest odds bookmaker, list [{betname, odds}, {betname2, odds2}] *** just prompt to return a structured message****
++++ have a different prompt for a combo, 
++++ re
+"""
+
+### example messsage output Bet: Combo Double Chance (Deportivo W or Draw) + Under 3.5 Goals
+############################# odds 
+""""
+
+based on the following prediction:
+{insert prediction}
+iterate over the following odds and return the  bookmaker with the highest odds.
+{insert odds }
+format the response as, 
+bookmaker: <bookmaker>
+bet:<bet advice>
+odds:<odds from the selected bookmaker>
+
+"""
+
+
+""""
+How to populate  message data
+1. query the predictions table, for fixtures where message sent is not true
+    >>  here we get fixtureids, advice,bestbookmaker, bestodds
+2. fetch fixtures on on all today fixtures
+    ++ randomly select one
+    >> here we get time, date,
+    >> carry through league id, team ids( home and away)
+3.  fetch league name fro leagues table based on league ID
+4. fetch team names from tems table based on tema Id
+**** Hooray Now send the message**** 
+"""

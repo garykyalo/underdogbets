@@ -63,6 +63,9 @@ class Prediction(Base):
     predictions_data = Column(Text, nullable=False)  # Storing the whole 'predictions' data as JSON
     advice = Column(String(255), nullable=False)
     is_combo = Column(Boolean, default=False)
+    best_bookmaker = Column(Text, nullable=True)
+    bet_odds = Column(Text, nullable=True)     ### storing a list of odds for bet combo( single item in the list if not combo)
+    message_send = Column(Boolean, default=False)     ## boolean that shows whether the matches bet has been shown
     time_updated = Column(DateTime, default=func.now(), onupdate=func.now())  # Automatically updates the time
 
     # Optional: Define a listener to update the time explicitly
@@ -86,7 +89,7 @@ class Odds(Base):
     name = Column(String(255), nullable=False)
     league_id = Column(Integer, ForeignKey('leagues.league_id'), nullable=False)
     fixture_id = Column(Integer, ForeignKey('fixtures.fixture_id'), nullable=False, unique=True)
-    update_time =  Column(Time, nullable=False)
+    update_time =  Column(Text, nullable=False)
     bookmakers = Column(Text, nullable=False)  # Storing the whole 'odds' for all bookmakers as a  JSON string
 
 

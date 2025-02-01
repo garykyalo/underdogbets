@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenAI Prompt Test</title>
+  </head>
+  <body>
+    <h1>Test OpenAI GPT Completion</h1>
+    <form action="" method="post">
+      <label for="prompt">Enter a prompt:</label><br />
+      <textarea id="prompt" name="prompt" rows="5" cols="50"></textarea
+      ><br /><br />
+      <button type="submit">Generate</button>
+    </form>
+
+    {% if openai_response %}
+    <h2>Response from OpenAI:</h2>
+    <p>{{ openai_response }}</p>
+    {% endif %}
+  </body>
+</html>

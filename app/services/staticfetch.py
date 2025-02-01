@@ -3,6 +3,7 @@ import requests
 from ..config import settings
 from sqlalchemy.orm import Session
 from ..database import Bookmakers, Bettypes, Leagues
+from .storedata import store_teamsdata
 
 async def fetch_data(endpoint, params):
     sport="v3.football.api-sports.io"
@@ -23,18 +24,32 @@ async def get_teams(db:Session):   ### call once a day
         params = {"league": league_id, "season": 2024}
         league_teams = await fetch_data(endpoint, params)
         teams.append(league_teams)
+        result = await store_teamsdata(db,league_teams)
+        print(result)
     return teams 
 
-async def get_betsandbookmakers(db:Session):
-    items = {'bookmakers': Bookmakers, 'bets': Bettypes}
-    params = {}
-    for item in items:
-        endpoint = f"/odds/{item}"
-        data = await fetch_data(endpoint, params)
-        bookmakers_data = data["response"]
-        for bookmaker in bookmakers_data:
-            if not bookmaker.get("id") or not bookmaker.get("name"):
-                continue
-            db.merge(items[item](id=bookmaker["id"], name=bookmaker["name"]))
-    db.commit
+async def get_bookmakers(db:Session):   ### one call per day
+    endpoint = f"/odds/bookmakers"
+    params ={}
+    data = await fetch_data(endpoint, params)
+    bookmakers_data = data.get("response", [])
+    for bookmaker in bookmakers_data:
+        if not bookmaker.get("id") or not bookmaker.get("name"):
+            continue
+        db.merge(Bookmakers(id=bookmaker["id"], name=bookmaker["name"]))
+    db.commit()
+    print("bookmaker done")
+    return "success"
+
+async def get_bets(db:Session):  ### one call per day
+    endpoint = f"/odds/bets"
+    params ={}
+    data = await fetch_data(endpoint, params)
+    bookmakers_data = data.get("response", [])
+    for bookmaker in bookmakers_data:
+        if not bookmaker.get("id") or not bookmaker.get("name"):
+            continue
+        db.merge(Bettypes(id=bookmaker["id"], name=bookmaker["name"]))
+    db.commit()
+    print("bets done")
     return "success"

@@ -21,6 +21,7 @@ async def get_fixtures(db:Session):              #call every hour
         fetched_fixtures = await fetch_data(endpoint, params)
         for item in fetched_fixtures["response"]:
             if item["league"]["id"] in league_ids:
+                print(item)
                 new_fixtures.append(item)
     result = await store_fixtures(db,new_fixtures)
     return new_fixtures
@@ -45,6 +46,7 @@ async def get_predictions(db:Session):                      ### one call per hou
             "predictions": data["response"][0]["predictions"],
             "advice": data["response"][0]["predictions"]["advice"]
             }
+        print("yeah")
         predictions.append(result)
     result = await store_predictions(db,predictions)
     return predictions
@@ -64,9 +66,10 @@ async def get_odds(db:Session):   #### one call every 3hrs
     for fixture in todays_fixtures:
         params = {"fixture": fixture.fixture_id}
         data = await fetch_data(endpoint, params)
-        oddsresponse = odds["response"]
+        oddsresponse = data["response"]
+        print(1)
         odds.append(oddsresponse)
-    result = store_odds(db, oddsresponse)
+    result = await store_odds(db, oddsresponse)
     return odds
 
     ## we need to figure out  how the advice from the prediction can translate to a list of odds. 
