@@ -1,5 +1,5 @@
 ### contains models that fetch data from endpoints not regularly updated
-import requests
+import requests, asyncio
 from ..config import settings
 from sqlalchemy.orm import Session
 from ..database import Bookmakers, Bettypes, Leagues
@@ -22,10 +22,11 @@ async def get_teams(db:Session):   ### call once a day
     teams = []
     for league_id in league_ids:
         params = {"league": league_id, "season": 2024}
+        print(league_id)
         league_teams = await fetch_data(endpoint, params)
         teams.append(league_teams)
         result = await store_teamsdata(db,league_teams)
-        print(result)
+        await asyncio.sleep(1)
     return teams 
 
 async def get_bookmakers(db:Session):   ### one call per day
