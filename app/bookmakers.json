@@ -1,0 +1,62 @@
+[
+  {
+    "id": 8,
+    "bookmaker": "Bet365",
+    "description": "Covers lower leagues globally, competitive odds, and live betting.",
+    "website": "https://www.bet365.com/"
+  },
+  {
+    "id": 27,
+    "bookmaker": "BetVictor",
+    "description": "Offers great odds and a user-friendly platform for football and basketball.",
+    "website": "https://www.betvictor.com/"
+  },
+  {
+    "id": 21,
+    "bookmaker": "Paddy Power",
+    "description": "Includes special bets for lower leagues and live odds.",
+    "website": "https://www.paddypower.com/bet"
+  },
+  {
+    "id": 3,
+    "bookmaker": "Betfair",
+    "description": "A betting exchange with sharp odds and in-depth markets.",
+    "website": "https://www.betfair.com/"
+  },
+  {
+    "id": 18,
+    "bookmaker": "Sky Bet",
+    "description": "Easy to use, good odds for lower league football, and Bet Builder options.",
+    "website": "https://m.skybet.com/"
+  },
+  {
+    "id": 7,
+    "bookmaker": "William Hill",
+    "description": "Reliable for lower leagues with live betting and solid odds.",
+    "website": "https://www.williamhill.com/"
+  },
+  {
+    "id": 10,
+    "bookmaker": "Ladbrokes",
+    "description": "Covers football and basketball lower leagues with competitive markets.",
+    "website": "https://www.williamhill.com/"
+  },
+  {
+    "id": 16,
+    "bookmaker": "Unibet",
+    "description": "Offers wide sports coverage, including live streaming for football and basketball.",
+    "website": "https://www.unibet.com/"
+  },
+  {
+    "id": 24,
+    "bookmaker": "Betway",
+    "description": "Strong for lower league coverage and in-play betting.",
+    "website": "https://betway.com/"
+  },
+  {
+    "id": 10,
+    "bookmaker": "Coral",
+    "description": "Simple to use, great lower league options, and competitive odds.",
+    "website": "https://sports.coral.co.uk/"
+  }
+]

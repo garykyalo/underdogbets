@@ -23,7 +23,9 @@ def get_db():
         db.close() 
 
 def initialize_database():
+    print("Initializing the database...")
     Base.metadata.create_all(bind=engine)
+    print("Database initialized.")
 
 
 class Leagues(Base):
@@ -77,8 +79,11 @@ class Bookmakers(Base):
     __tablename__ = 'bookmakers'
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
+    website = Column(String(255), nullable=False)  
+    description = Column(String(255), nullable=False)  
 
 class Bettypes(Base):
     __tablename__ = 'bettypes'
     id = Column(Integer, primary_key=True)
     name = Column(String(255), nullable=False)
+    

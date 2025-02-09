@@ -3,7 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import asyncio
 from .services.telegram import send_message,send_image
-from .services.messages import Daily_tip, populate_message_data
+from .services.messages import Daily_tip, populate_message_data, try_message
 from .services.fetchdata import get_fixtures, get_predictions
 from .services.staticfetch import get_teams
 from .database import get_db
@@ -31,8 +31,8 @@ def sync_send_daily_tip_image():
     if result is None:
         print("No daily tip to send.")
         return
-    text, fixtureId, imageurl = result
-    asyncio.run(send_image( db, text, imageurl, fixtureId)) 
+    text, fixtureId, imageurl, bookmaker, bookmakerwebsite = result
+    asyncio.run(send_message( db, text, fixtureId,bookmaker, bookmakerwebsite)) 
 
 
 async def send_daily_tip():
@@ -42,17 +42,18 @@ async def send_daily_tip():
         return None
     fixtureId = match["fixture_id"]
     imageurl = match["leaguelogo"]
+    bookmaker = match["bookmaker"]
+    bookmakerwebsite = match["website"]
     text = Daily_tip(match)
-    return text, fixtureId, imageurl
+    return text, fixtureId, imageurl, bookmaker, bookmakerwebsite
 
 
 scheduler = BackgroundScheduler()
 
-
 # Add the job to the scheduler
 scheduler.add_job(
     sync_send_daily_tip_image,
-    IntervalTrigger(seconds=1800),
+    IntervalTrigger(seconds=900),
     id="daily_tip_job",
     name="Send Daily Tip",
     replace_existing=True
@@ -60,7 +61,7 @@ scheduler.add_job(
 
 scheduler.add_job(
     sync_fetch_fixtures_and_predictions,
-      IntervalTrigger(seconds=7200),
+      IntervalTrigger(seconds=14400),
     id="update_predictions",
     name="Update the fixtures and predictions",
     replace_existing=True
